@@ -13,7 +13,7 @@ RUN apk add --no-cache postgresql-libs \
   && python3 -m pip install -r /api/requirements.txt --no-cache-dir \
   && apk --purge del .build-deps
 
-COPY . /api
+COPY . .
 
 # FastAPIの起動
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

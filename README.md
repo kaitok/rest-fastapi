@@ -8,3 +8,7 @@ uvicorn api.main:app --reload
 
 docker-compose up -d
 docker-compose down --volume
+
+### attach container
+
+docker exec -it rest-fastapi-server-1 sh

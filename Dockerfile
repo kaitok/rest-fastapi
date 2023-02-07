@@ -14,4 +14,4 @@ RUN apk add --no-cache postgresql-libs \
   && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev \
   && apk --purge del .build-deps
 
-COPY . .
+COPY ./api .

@@ -1,21 +1,36 @@
-# rest-fastapi
+## FastAPI + PostgreSQL + Docker template
+
+### Install
+
+```
+touch api/.env
+```
+
+modify `.env` file
+
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=rest-fastapi
+HOST=postgres
+PORT=5432
+PYTHONPATH=/app
+```
 
 ### Start
 
-`uvicorn api.main:app --reload`
-
-### create & build container
-
+```
 docker-compose up -d --build
+```
 
-### down container with volume
+### Down container with volume
 
+```
 docker-compose down --volume
+```
 
-### attach container
+### Create migration file
 
-docker-compose exec -it server sh
-
-### create migration file
-
+```
 docker-compose exec server alembic revision --autogenerate -m 'create profile'
+```

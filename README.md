@@ -2,13 +2,20 @@
 
 ### Start
 
-uvicorn api.main:app --reload
+`uvicorn api.main:app --reload`
 
-### create & remove container
+### create & build container
 
-docker-compose up -d
+docker-compose up -d --build
+
+### down container with volume
+
 docker-compose down --volume
 
 ### attach container
 
-docker exec -it rest-fastapi-server-1 sh
+docker-compose exec -it server sh
+
+### create migration file
+
+docker-compose exec server alembic revision --autogenerate -m 'create profile'

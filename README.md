@@ -3,7 +3,7 @@
 ### Install
 
 ```
-touch api/.env
+touch .env
 ```
 
 modify `.env` file

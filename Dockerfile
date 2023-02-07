@@ -3,7 +3,7 @@ FROM python:3.9-alpine
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
 
-WORKDIR /api
+WORKDIR /app
 
 # pip install
 COPY requirements.txt .

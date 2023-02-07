@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .routers import users
+from routers import users
 from database import SessionLocal
 
 app = FastAPI()

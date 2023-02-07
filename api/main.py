@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from .routers import users
-from db import SessionLocal
+from database import SessionLocal
 
 app = FastAPI()
 app.include_router(users.router)

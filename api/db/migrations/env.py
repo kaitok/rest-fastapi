@@ -1,4 +1,4 @@
-import os
+from env import DB_USER, DB_PASSWORD, DB_NAME, HOST, PORT
 import models
 
 from logging.config import fileConfig
@@ -30,13 +30,7 @@ target_metadata = models.Base.metadata
 
 
 # database connection
-username = os.environ.get("POSTGRES_USER")
-password = os.environ.get("POSTGRES_PASSWORD")
-database = os.environ.get("POSTGRES_DB")
-host = os.environ.get("HOST")
-port = os.environ.get("PORT")
-
-DATABASE = "postgresql://{username}:{password}@{host}:{port}/{database}"
+DATABASE = f"postgresql://{DB_USER}:{DB_PASSWORD}@{HOST}:{PORT}/{DB_NAME}"
 config.set_main_option("sqlalchemy.url", DATABASE)
 
 

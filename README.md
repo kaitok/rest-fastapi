@@ -34,3 +34,9 @@ docker-compose down --volume
 ```
 docker-compose exec server alembic revision --autogenerate -m 'create profile'
 ```
+
+### Test
+
+```
+docker-compose exec server pytest .
+```

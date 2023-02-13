@@ -2,3 +2,13 @@ __pycache__
 .env
 env
 test_db.db
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars

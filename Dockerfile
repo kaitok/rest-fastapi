@@ -15,3 +15,5 @@ RUN apk add --no-cache postgresql-libs \
   && apk --purge del .build-deps
 
 COPY ./api .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

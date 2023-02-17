@@ -234,7 +234,6 @@ resource "aws_ecr_repository" "api_ecr" {
 }
 
 
-
 # ECS
 resource "aws_ecs_cluster" "api_ecs" {
   name = "rest-fastapi"

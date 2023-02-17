@@ -212,6 +212,21 @@ output "alb_dns_name" {
   value = aws_lb.rest_fastapi.dns_name
 }
 
+resource "aws_lb_listener" "http" {
+  load_balancer_arn = aws_lb.rest_fastapi.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "test"
+      status_code  = "200"
+    }
+  }
+}
 
 # ECR
 resource "aws_ecr_repository" "api_ecr" {
